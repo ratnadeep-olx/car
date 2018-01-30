@@ -1,0 +1,29 @@
+version: "2"
+services:
+  go:
+    image: golang:1.8-alpine
+    container_name: go
+    ports:
+     - 8080:8080
+    volumes:
+     - .:/usr/src/car
+    working_dir: /usr/src/car
+    command: go run server.go
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.1.2
+    container_name: elasticsearch
+    environment:
+      - cluster.name=docker-cluster
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms256m -Xmx256m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+volumes:
+  esdata:
+    driver: local
