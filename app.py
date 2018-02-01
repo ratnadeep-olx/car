@@ -76,6 +76,6 @@ def search_in_elasticsearch(search_term):
     sources = []
     for doc in result["hits"]["hits"]:
         source = doc['_source']
-        source["_id"] = doc["_id"]
+        source["id"] = doc["_id"]
         sources.append(source)
     return sources 
