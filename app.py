@@ -24,10 +24,12 @@ def search(methods=['GET']):
     print search_term
     if 'vs' in search_term:
         search_terms = search_term.split("vs")
-	print search_terms
         list1 = search_in_elasticsearch(search_terms[0])
         list2 = search_in_elasticsearch(search_terms[1])
-        result = list(itertools.product(list1,list2))
+	if not (list1 and list2):
+	    result = [[list1, list2]]	
+        else: 
+	    result = list(itertools.product(list1,list2))
     else:
 	result = search_in_elasticsearch(search_term)
     return json.dumps(result)
@@ -37,6 +39,12 @@ def item():
     item_id = request.args.get('id', '')
     result = es.get(index="poc", doc_type='model', id=item_id)['_source']
     return  json.dumps(result)
+
+@app.route('/listing')
+def listing():
+    results= [es.get(index="poc", doc_type='model', id=item_id)['_source'] for item_id in range(1, 5)] 
+    return  json.dumps(results)
+
 
 def search_in_elasticsearch(search_term):
     query = {
