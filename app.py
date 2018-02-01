@@ -3,7 +3,7 @@ import os
 import json
 import itertools
 from flask import Flask, request, session, g, redirect, url_for, abort, \
-     render_template, flash
+     render_template, flash, Response
 from elasticsearch import Elasticsearch
 import requests
 from flask_cors import CORS, cross_origin
@@ -172,7 +172,7 @@ def suggest(methods=['GET']):
     return Response(json.dumps(output), content_type='application/json; charset=utf-8')
 
 def postReq(req):
-    url = "http://127.0.0.1:1081/query"
+    url = "http://autosugg:1081/query"
 
     payload = req
 

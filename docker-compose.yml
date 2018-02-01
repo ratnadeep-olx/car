@@ -11,6 +11,18 @@ services:
      - FLASK_APP=app.py
     working_dir: /usr/src/car
     command: flask run --host=0.0.0.0 --port=8080
+  autosuggest:
+    build: autosuggest/
+    container_name: autosugg
+    ports:
+     - 1081:1081
+    volumes:
+     - ./autosuggest/autosuggest:/usr/src/autosuggest
+    environment:
+        - ABC=abc
+    working_dir: /usr/src/autosuggest
+    command: mvn exec:java
+
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.1.2
     container_name: elasticsearch
