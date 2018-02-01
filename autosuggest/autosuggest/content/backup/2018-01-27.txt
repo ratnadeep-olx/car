@@ -1,0 +1,148 @@
+{"query":"Automatic","parameter":{"attributes":1}}
+{"query":"Manual","parameter":{"attributes":1}}
+{"query":"4X4","parameter":{"attributes":1}}
+{"query":"5 door","parameter":{"attributes":1}}
+{"query":"7 door","parameter":{"attributes":1}}
+{"query":"rain sensing wipers","parameter":{"attributes":1}}
+{"query":"suv","parameter":{"attributes":1}}
+{"query":"muv","parameter":{"attributes":1}}
+{"query":"sedan","parameter":{"attributes":1}}
+{"query":"hatchback","parameter":{"attributes":1}}
+{"query":"AMT","parameter":{"attributes":1}}
+{"query":"CVT","parameter":{"attributes":1}}
+{"query":"Front wheel drive","parameter":{"attributes":1}}
+{"query":"sport","parameter":{"attributes":1}}
+{"query":"cng","parameter":{"attributes":1}}
+{"query":"bhp","parameter":{"attributes":1}}
+{"query":"torque","parameter":{"attributes":1}}
+{"query":"Airbags","parameter":{"attributes":1}}
+{"query":"Seat","parameter":{"attributes":1}}
+{"query":"Belt","parameter":{"attributes":1}}
+{"query":"warning","parameter":{"attributes":1}}
+{"query":"anti lock braking system","parameter":{"attributes":1}}
+{"query":"abs","parameter":{"attributes":1}}
+{"query":"Hill Hold Control","parameter":{"attributes":1}}
+{"query":"seat adjustment","parameter":{"attributes":1}}
+{"query":"AC","parameter":{"attributes":1}}
+{"query":"keyless start","parameter":{"attributes":1}}
+{"query":"power windows","parameter":{"attributes":1}}
+{"query":"Sunroof","parameter":{"attributes":1}}
+{"query":"Hyundai","parameter":{"brand":1}}
+{"query":"Hyundai Elite i20","parameter":{"model":1}}
+{"query":"Hyundai Elite i20 Era 1.2 Petrol","parameter":{"version":1}}
+{"query":"Hyundai Elite i20 Magna Executive 1.2 Petrol","parameter":{"version":1}}
+{"query":"Hyundai Elite i20 Sportz 1.2 Petrol","parameter":{"version":1}}
+{"query":"Hyundai Elite i20 Era 1.4 CRDI Diesel","parameter":{"version":1}}
+{"query":"Hyundai Elite i20 Asta 1.2 Petrol","parameter":{"version":1}}
+{"query":"Hyundai Elite i20 Magna Executive 1.4 CRDI Diesel","parameter":{"version":1}}
+{"query":"Hyundai Elite i20 Asta 1.2 Dual Tone Petrol","parameter":{"version":1}}
+{"query":"Hyundai Elite i20 Sportz 1.4 CRDI Diesel","parameter":{"version":1}}
+{"query":"Hyundai Elite i20 Asta 1.2 (O) Petrol","parameter":{"version":1}}
+{"query":"Hyundai Elite i20 Asta 1.4 CRDI Diesel","parameter":{"version":1}}
+{"query":"Hyundai Elite i20 Asta 1.4 CRDI Dual Tone Diesel","parameter":{"version":1}}
+{"query":"Hyundai Elite i20 Asta 1.4 CRDI (O) Diesel","parameter":{"version":1}}
+{"query":"Hyundai Elite i20 Magna 1.4 AT Petrol","parameter":{"version":1}}
+{"query":"Hyundai","parameter":{"brand":1}}
+{"query":"Hyundai Verna","parameter":{"model":1}}
+{"query":"Hyundai Verna 1.4 VTVT E Petrol","parameter":{"version":1}}
+{"query":"Hyundai Verna 1.4 VTVT EX Petrol","parameter":{"version":1}}
+{"query":"Hyundai Verna 1.6 CRDI E Diesel","parameter":{"version":1}}
+{"query":"Hyundai Verna 1.6 VTVT SX Petrol","parameter":{"version":1}}
+{"query":"Hyundai Verna 1.6 CRDI EX Diesel","parameter":{"version":1}}
+{"query":"Hyundai Verna 1.6 VTVT EX AT Petrol","parameter":{"version":1}}
+{"query":"Hyundai Verna 1.6 VTVT SX (O) Petrol","parameter":{"version":1}}
+{"query":"Hyundai Verna 1.6 CRDI SX Diesel","parameter":{"version":1}}
+{"query":"Hyundai Verna 1.6 CRDI EX AT Diesel","parameter":{"version":1}}
+{"query":"Hyundai Verna 1.6 VTVT SX (O) AT Petrol","parameter":{"version":1}}
+{"query":"Hyundai Verna 1.6 CRDI SX (O) Diesel","parameter":{"version":1}}
+{"query":"Hyundai Verna 1.6 CRDI SX Plus AT Diesel","parameter":{"version":1}}
+{"query":"Maruti Suzuki","parameter":{"brand":1}}
+{"query":"Maruti Suzuki Ciaz","parameter":{"model":1}}
+{"query":"Maruti Suzuki Ciaz Sigma 1.4 MT Petrol","parameter":{"version":1}}
+{"query":"Maruti Suzuki Ciaz Delta 1.4 MT Petrol","parameter":{"version":1}}
+{"query":"Maruti Suzuki Ciaz Zeta 1.4 MT Petrol","parameter":{"version":1}}
+{"query":"Maruti Suzuki Ciaz Delta 1.4 AT Petrol","parameter":{"version":1}}
+{"query":"Maruti Suzuki Ciaz Alpha 1.4 MT Petrol","parameter":{"version":1}}
+{"query":"Maruti Suzuki Ciaz Sigma 1.3 Hybrid Diesel","parameter":{"version":1}}
+{"query":"Maruti Suzuki Ciaz S 1.4 MT Petrol","parameter":{"version":1}}
+{"query":"Maruti Suzuki Ciaz Delta 1.3 Hybrid Diesel","parameter":{"version":1}}
+{"query":"Maruti Suzuki Ciaz Zeta 1.4 AT Petrol","parameter":{"version":1}}
+{"query":"Maruti Suzuki Ciaz Alpha 1.4 AT Petrol","parameter":{"version":1}}
+{"query":"Maruti Suzuki Ciaz Zeta 1.3 Hybrid Diesel","parameter":{"version":1}}
+{"query":"Maruti Suzuki Ciaz Alpha 1.3 Hybrid Diesel","parameter":{"version":1}}
+{"query":"Maruti Suzuki Ciaz S 1.3 Hybrid Diesel","parameter":{"version":1}}
+{"query":"Maruti Suzuki","parameter":{"brand":1}}
+{"query":"Maruti Suzuki Swift","parameter":{"model":1}}
+{"query":"Maruti Suzuki Swift Lxi (O) Petrol","parameter":{"version":1}}
+{"query":"Maruti Suzuki Swift Limited Edition Petrol","parameter":{"version":1}}
+{"query":"Maruti Suzuki Swift VXi Petrol","parameter":{"version":1}}
+{"query":"Maruti Suzuki Swift VXi ABS Petrol","parameter":{"version":1}}
+{"query":"Maruti Suzuki Swift LDi Diesel","parameter":{"version":1}}
+{"query":"Maruti Suzuki Swift LDi ABS Diesel","parameter":{"version":1}}
+{"query":"Maruti Suzuki Swift ZXi Petrol","parameter":{"version":1}}
+{"query":"Maruti Suzuki Swift Limited Edition Diesel","parameter":{"version":1}}
+{"query":"Maruti Suzuki Swift VDi Diesel","parameter":{"version":1}}
+{"query":"Maruti Suzuki Swift VDi ABS Diesel","parameter":{"version":1}}
+{"query":"Maruti Suzuki Swift ZDi Diesel","parameter":{"version":1}}
+{"query":"Renault","parameter":{"brand":1}}
+{"query":"Renault Captur","parameter":{"model":1}}
+{"query":"Renault Captur RXE Petrol","parameter":{"version":1}}
+{"query":"Renault Captur RXL Petrol","parameter":{"version":1}}
+{"query":"Renault Captur RXE Diesel","parameter":{"version":1}}
+{"query":"Renault Captur RXT Petrol","parameter":{"version":1}}
+{"query":"Renault Captur RXL Diesel","parameter":{"version":1}}
+{"query":"Renault Captur RXT Diesel","parameter":{"version":1}}
+{"query":"Renault Captur Platine Diesel","parameter":{"version":1}}
+{"query":"Renault","parameter":{"brand":1}}
+{"query":"Renault Duster","parameter":{"model":1}}
+{"query":"Renault Duster RxE Petrol","parameter":{"version":1}}
+{"query":"Renault Duster RXL Petrol","parameter":{"version":1}}
+{"query":"Renault Duster 85 PS Base 4X2 MT Diesel","parameter":{"version":1}}
+{"query":"Renault Duster 85 PS RxE 4X2 MT Diesel","parameter":{"version":1}}
+{"query":"Renault Duster RXS CVT Petrol","parameter":{"version":1}}
+{"query":"Renault Duster 85 PS RXS 4X2 MT Diesel","parameter":{"version":1}}
+{"query":"Renault Duster 85 PS Sandstorm Edition Diesel","parameter":{"version":1}}
+{"query":"Renault Duster 85 PS RXZ 4X2 MT Diesel","parameter":{"version":1}}
+{"query":"Renault Duster 110 PS Sandstorm Edition Diesel","parameter":{"version":1}}
+{"query":"Renault Duster 110 PS RXZ 4X2 MT Diesel","parameter":{"version":1}}
+{"query":"Renault Duster 110 PS RXZ 4X2 AMT Diesel","parameter":{"version":1}}
+{"query":"Renault Duster 110 PS RXZ 4X4 MT Diesel","parameter":{"version":1}}
+{"query":"Renault","parameter":{"brand":1}}
+{"query":"Renault Kwid","parameter":{"model":1}}
+{"query":"Renault Kwid STD Petrol","parameter":{"version":1}}
+{"query":"Renault Kwid RXE Petrol","parameter":{"version":1}}
+{"query":"Renault Kwid RXL Petrol","parameter":{"version":1}}
+{"query":"Renault Kwid RXL Edition Petrol","parameter":{"version":1}}
+{"query":"Renault Kwid 1.0 RXL Petrol","parameter":{"version":1}}
+{"query":"Renault Kwid RXT Petrol","parameter":{"version":1}}
+{"query":"Renault Kwid 1.0 RXL Edition Petrol","parameter":{"version":1}}
+{"query":"Renault Kwid RXT Opt Petrol","parameter":{"version":1}}
+{"query":"Renault Kwid RXT Edition Petrol","parameter":{"version":1}}
+{"query":"Renault Kwid 1.0 RXL AMT Petrol","parameter":{"version":1}}
+{"query":"Renault Kwid 1.0 RXT Petrol","parameter":{"version":1}}
+{"query":"Renault Kwid 1.0 RXT Opt Petrol","parameter":{"version":1}}
+{"query":"Renault Kwid 1.0 RXT Edition Petrol","parameter":{"version":1}}
+{"query":"Renault Kwid CLIMBER 1.0 Petrol","parameter":{"version":1}}
+{"query":"Renault Kwid 1.0 RXT AMT Opt Petrol","parameter":{"version":1}}
+{"query":"Renault Kwid CLIMBER 1.0 AMT Petrol","parameter":{"version":1}}
+{"query":"Hyundai i20 vs Maruti Ciaz","parameter":{"compare":1}}
+{"query":"Hyundai i20 vs Maruti Swift","parameter":{"compare":1}}
+{"query":"Hyundai Verna vs Maruti Ciaz","parameter":{"compare":1}}
+{"query":"Hyundai Verna vs Maruti Swift","parameter":{"compare":1}}
+{"query":"Hyundai Creta vs Maruti Ciaz","parameter":{"compare":1}}
+{"query":"Hyundai Creta vs Maruti Swift","parameter":{"compare":1}}
+{"query":"Hyundai i20 vs Renault Captur","parameter":{"compare":1}}
+{"query":"Hyundai i20 vs Renault Kwid","parameter":{"compare":1}}
+{"query":"Hyundai i20 vs Renault Duster","parameter":{"compare":1}}
+{"query":"Hyundai Verna vs Renault Captur","parameter":{"compare":1}}
+{"query":"Hyundai Verna vs Renault Kwid","parameter":{"compare":1}}
+{"query":"Hyundai Verna vs Renault Duster","parameter":{"compare":1}}
+{"query":"Hyundai Creta vs Renault Captur","parameter":{"compare":1}}
+{"query":"Hyundai Creta vs Renault Kwid","parameter":{"compare":1}}
+{"query":"Hyundai Creta vs Renault Duster","parameter":{"compare":1}}
+{"query":"Maruti Ciaz vs Renault Captur","parameter":{"compare":1}}
+{"query":"Maruti Ciaz vs Renault Kwid","parameter":{"compare":1}}
+{"query":"Maruti Ciaz vs Renault Duster","parameter":{"compare":1}}
+{"query":"Maruti Swift vs Renault Captur","parameter":{"compare":1}}
+{"query":"Maruti Swift vs Renault Kwid","parameter":{"compare":1}}
+{"query":"Maruti Swift vs Renault Duster","parameter":{"compare":1}}
