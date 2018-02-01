@@ -15,10 +15,10 @@ es = Elasticsearch(
     port=ES_PORT,
 )
 app = Flask(__name__)
-CORS(app)
+cors = CORS(app, resources={r"/*": {"origins": "*","supports_credentials": True}})
 
 @app.route('/search')
-@cross_origin()
+
 def search(methods=['GET']):
     search_term = request.args.get('q', '')
     print search_term
@@ -79,3 +79,101 @@ def search_in_elasticsearch(search_term):
         source["id"] = doc["_id"]
         sources.append(source)
     return sources 
+
+@app.route("/suggest")
+def suggest(methods=['GET']):
+    
+    search_term = request.args.get('q', '')
+
+    # Search for BRAND
+    data = postReq(json.dumps({"query":search_term, "filter":{"brand":1}, "bucket":{},"limit":2}))
+    #print data
+    json_data = json.loads(postReq(json.dumps({"query":search_term, "filter":{"brand":1}, "bucket":{},"limit":2})))
+    #print json_data
+    start = 0
+    output = {}
+    for data in json_data:
+
+        output[start] = data["matched"]
+        start = start + 1
+
+    # Search for MODEL
+    json_data1 = json.loads(
+        postReq(json.dumps({"query": search_term, "filter": {"model": 1}, "bucket": {}, "limit": 2})))
+
+    for data in json_data1:
+
+        output[start] = data["matched"]
+        start = start + 1
+
+    # Search for VERSION
+    json_data = json.loads(
+        postReq(json.dumps({"query": search_term, "filter": {"version": 1}, "bucket": {}, "limit": 2})))
+
+    for data in json_data:
+        output[start] = data["matched"]
+        start = start + 1
+
+    # Search for COMPARE
+    json_data = json.loads(
+        postReq(json.dumps({"query": search_term, "filter": {"compare": 1}, "bucket": {}, "limit": 2})))
+
+    for data in json_data:
+        output[start] = data["matched"]
+        start = start + 1
+
+    returnStr = ""
+    if start > 0:
+        return Response(json.dumps(output), content_type='application/json; charset=utf-8')
+
+    splitArr = search_term.split(" ")
+    length = len(splitArr)
+    if start == 0:
+
+        if length == 1:
+            # Search for COMPARE
+            json_data = json.loads(
+                postReq(json.dumps({"query": search_term, "filter": {"attributes": 1}, "bucket": {}, "limit": 1})))
+            for data in json_data:
+                output[start] = data["matched"]
+                intelligentFilter = data["matched"].lower()
+                intelligent = json.loads(
+                    postReq(json.dumps({"query": "", "filter": {intelligentFilter: 2}, "bucket": {}, "limit": 3})))
+                start =start + 1
+                for individualData in intelligent:
+                    output[start] = individualData["matched"]
+                    start = start + 1
+
+                intelligent = json.loads(
+                    postReq(json.dumps({"query": "", "filter": {intelligentFilter: 1}, "bucket": {}, "limit": 3})))
+                start = start + 1
+                for individualData in intelligent:
+                    output[start] = individualData["matched"]
+                    start = start + 1
+
+    if start == 0:
+        if length > 0:
+            last = splitArr[length -1]
+            json_data = json.loads(
+                postReq(json.dumps({"query": last, "filter": {"attributes": 1}, "bucket": {}, "limit": 4})))
+            for data in json_data:
+                splitArr = splitArr[:-1]
+                output[start] = " ".join(splitArr)+" "+data["matched"]
+                start = start + 1
+
+    return Response(json.dumps(output), content_type='application/json; charset=utf-8')
+
+def postReq(req):
+    url = "http://127.0.0.1:1081/query"
+
+    payload = req
+
+    headers = {
+        'Content-Type': "application/json",
+        'Cache-Control': "no-cache",
+        'Postman-Token': "28d95f1e-3976-b2bd-3b3e-990ec56389d8"
+    }
+
+    response = requests.request("POST", url, data=payload, headers=headers)
+
+    return response.text
