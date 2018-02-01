@@ -6,6 +6,7 @@ from flask import Flask, request, session, g, redirect, url_for, abort, \
      render_template, flash
 from elasticsearch import Elasticsearch
 import requests
+from flask_cors import CORS, cross_origin
 ES_HOST = 'elasticsearch'
 ES_PORT = 9200
 
@@ -14,29 +15,28 @@ es = Elasticsearch(
     port=ES_PORT,
 )
 app = Flask(__name__)
-
+CORS(app)
 
 @app.route('/search')
+@cross_origin()
 def search(methods=['GET']):
-#    search_term = request.args.get('search', '')
-#    if 'vs' in search_term:
-#        search_terms = search_term.split("vs")
-#        list1 = search_in_elasticsearch(search_terms[0])
-#        list2 = search_in_elasticsearch(search_terms[1])
-#        result = list(itertools.product(list1,list2))
-#    else:
-#        result = search_in_elasticsearch(search_term)
-#    return str(result)
-    item_id = request.args.get('id', '')
-    item_id = 1
-    result = es.get(index="poc", doc_type='model', id=item_id)['_source']
-    return str(result)
+    search_term = request.args.get('q', '')
+    print search_term
+    if 'vs' in search_term:
+        search_terms = search_term.split("vs")
+	print search_terms
+        list1 = search_in_elasticsearch(search_terms[0])
+        list2 = search_in_elasticsearch(search_terms[1])
+        result = list(itertools.product(list1,list2))
+    else:
+	result = search_in_elasticsearch(search_term)
+    return json.dumps(result)
 
 @app.route('/item')
 def item():
     item_id = request.args.get('id', '')
     result = es.get(index="poc", doc_type='model', id=item_id)['_source']
-    return str(result)
+    return  json.dumps(result)
 
 def search_in_elasticsearch(search_term):
     query = {
@@ -44,32 +44,28 @@ def search_in_elasticsearch(search_term):
             "bool": {
                 "should": [
                     {
-                        "nested": {
-                            "path": "variants",
-                            "query": {
-                                "multi_match": {
-                                    "query": search_term,
-                                    "fields": ["features"]
-                                }
-                            }
-                        } 
+                        "multi_match": {
+                            "query": search_term,
+                            "fields": ["modelDetails.modelName", "modelDetails.makeName"]
+                        }
                     },
                     {
                         "nested": {
-                            "path": "modelDetails",
+                            "path": "modelVersions",
                             "query": {
                                 "multi_match": {
                                     "query": search_term,
-                                    "fields": ["modelName", "makeName"]
+                                    "fields": ["modelVersions.features"]
                                 }
                             }
-                        }
+                        } 
                     }
+
                 ]
             }
         }
-    } 
-
+    }
+    #result = es.search(index="poc", doc_type='model', body= query)
     url = "http://{}:{}/poc/model/_search".format(ES_HOST, ES_PORT)
     payload = json.dumps(query) 
     headers = {
@@ -77,10 +73,9 @@ def search_in_elasticsearch(search_term):
     }
     response = requests.request("GET", url, data=payload, headers=headers )
     result =  json.loads(response.text)
-    print result
     sources = []
     for doc in result["hits"]["hits"]:
         source = doc['_source']
-        source[_id] = doc["_id"]
-        sources.push(source)
-    return sources
+        source["_id"] = doc["_id"]
+        sources.append(source)
+    return sources 
